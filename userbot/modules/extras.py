@@ -55,7 +55,24 @@ async def _(event):
 		await asyncio.sleep(0.1)
 		await event.edit("".join(deq))
 		deq.rotate(1)
-
+@register(outgoing=True, pattern="^.sun$")
+async def _(event):
+	if event.fwd_from:
+		return
+	deq = deque(list("🌥️⛅☀️🌄🌅🌞"))
+	for _ in range(32):
+		await asyncio.sleep(0.1)
+		await event.edit("".join(deq))
+		deq.rotate(1)
+@register(outgoing=True, pattern="^.fuck$")
+async def _(event):
+	if event.fwd_from:
+		return
+	deq = deque(list("👉👌👉👌👉👌👉👌💦"))
+	for _ in range(32):
+		await asyncio.sleep(0.1)
+		await event.edit("".join(deq))
+		deq.rotate(1)
 @register(outgoing=True, pattern="^.sauce$")
 async def source(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
